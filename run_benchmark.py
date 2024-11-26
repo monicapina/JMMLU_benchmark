@@ -171,7 +171,7 @@ class UMLSQuestionAnswering:
             
     
     def evaluate_with_umls_context(self, folder_path: str):
-        """Evaluates specified CSV files in the provided folder using LLaMA and calculates accuracy."""
+        """Evaluates specified CSV files in the provided folder and calculates accuracy."""
         total_accuracy = 0
         datasets_evaluated = 0
         
@@ -194,7 +194,7 @@ class UMLSQuestionAnswering:
                 options = [row.iloc[1], row.iloc[2], row.iloc[3], row.iloc[4]]
                 correct_answer = row.iloc[5]
                 if question:
-                    # Ask the question with LLaMA, including options
+                    # Ask the question, including options
                     llm_response = self.ask_question(question, options)
                     self._update_accuracy(dataset_name, llm_response, correct_answer)
             

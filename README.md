@@ -78,3 +78,7 @@ JMMLU_benchmark/
 ```
 
 ---
+
+## Error Handling
+
+During development and execution, certain errors may occur. Refer to the [Error Logs](https://github.com/monicapina/JMMLU_benchmark/blob/developed/error_logs.md) file for complete details and solutions.

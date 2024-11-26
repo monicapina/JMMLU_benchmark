@@ -21,10 +21,6 @@ The JMMLU Benchmark repository provides a comprehensive framework for evaluating
 
 ## Installation
 
-### Prerequisites
-- **Python**: Version 3.9 or higher
-- **`pip`**: For package management
-- **GPU (Optional)**: A CUDA-compatible GPU is recommended for optimal performance.
 
 ### Steps
 
@@ -36,9 +32,8 @@ The JMMLU Benchmark repository provides a comprehensive framework for evaluating
 
 2. **Create a Virtual Environment** (Recommended):
    ```bash
-   python -m venv venv
-   source venv/bin/activate        # For Linux/Mac
-   venv\Scripts\activate           # For Windows
+   conda create -n jp_benchmark python=3.9 -y
+   conda activate jp_benchmark
    ```
 
 3. **Install Dependencies**:
@@ -47,18 +42,13 @@ The JMMLU Benchmark repository provides a comprehensive framework for evaluating
    pip install -r requirements.txt
    ```
 
-4. **Verify Installation**:
-   Ensure all dependencies are installed successfully:
-   ```bash
-   python -m pip check
-   ```
 
 ---
 
 ## Usage
 
 ### Dataset Preparation
-Place your dataset files in the `data/` directory. Each dataset should be a CSV file formatted as follows:
+The dataset files are located in the data/ directory. The JMMLU dataset is a four-choice question set designed to evaluate the performance of large language models in Japanese. Each dataset is stored in CSV format, and each row represents a question with the following structure:
 
 | Question                | Option A       | Option B       | Option C       | Option D       | Correct Answer |
 |-------------------------|----------------|----------------|----------------|----------------|----------------|
@@ -67,7 +57,7 @@ Place your dataset files in the `data/` directory. Each dataset should be a CSV 
 ### Run the Evaluation Script
 To evaluate the datasets, execute:
 ```bash
-python main.py
+python run_benchmark.py
 ```
 
 The script will process each dataset in the `data/` directory and output accuracy metrics for each file.
@@ -80,35 +70,11 @@ The script will process each dataset in the `data/` directory and output accurac
 JMMLU_benchmark/
 │
 ├── data/                   # Directory for dataset CSV files
-├── main.py                 # Main script for running evaluations
+├── run_benchmark.py        # Main script for running evaluations
+├── umls_rerank_cohere.py   # UMLS reranking logic with Cohere
+├── context_generator.py    # Replacing UMLS with Wikipedia                     
 ├── requirements.txt        # List of Python dependencies
 ├── README.md               # Project documentation
 ```
 
 ---
-
-## Contributions
-
-Contributions are welcome! If you have suggestions, improvements, or new features, feel free to create a pull request or open an issue on the [GitHub repository](https://github.com/monicapina/JMMLU_benchmark).
-
----
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-## Support
-
-For questions or issues, please open an issue on the [GitHub Issues page](https://github.com/monicapina/JMMLU_benchmark/issues).
-
----
-
-## Acknowledgments
-
-Special thanks to contributors and the community for supporting the development and improvement of this benchmark.
-
----
-
-With this repository, you can effectively evaluate Japanese language models across multiple tasks and improve their performance.

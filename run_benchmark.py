@@ -136,7 +136,8 @@ class UMLSQuestionAnswering:
         formatted_question = f"{question}\nOptions:\nA. {options[0]}\nB. {options[1]}\nC. {options[2]}\nD. {options[3]}\nWhat is the correct option? Choose A, B, C, or D."
         
         #context = self.generate_context_with_retries(question, PROMPT) # For API rate limiting
-        context = get_umls_keys(question, PROMPT, self.pipe)
+        context = get_umls_keys(question, PROMPT, self.pipe) #KG-Rank-UMLS
+        #context = generate_context(prompt, token_cohere) #KG-Rank-WikiPedia
         print("context: ", context)
         answer = self.conversation.predict(context=context, input=formatted_question)
         print("answer: ", answer)        

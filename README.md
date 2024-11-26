@@ -71,8 +71,8 @@ JMMLU_benchmark/
 │
 ├── data/                   # Directory for dataset CSV files
 ├── run_benchmark.py        # Main script for running evaluations
-├── umls_rerank_cohere.py   # UMLS reranking logic with Cohere
-├── context_generator.py    # Replacing UMLS with Wikipedia                     
+├── umls_rerank_cohere.py   # KG-Rank-UMLS
+├── context_generator.py    # KG-Rank-WikiPedia                    
 ├── requirements.txt        # List of Python dependencies
 ├── README.md               # Project documentation
 ```

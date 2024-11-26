@@ -208,6 +208,6 @@ model_name= "google/gemma-2-2b"
 #model_name="google/gemma-2-2b-jpn-it"
 qa_system = UMLSQuestionAnswering(model_name=model_name)
 
-folder_path = "C:/Users/monic/Documents/GitHub/JMMLU/JMMLU/"
+folder_path = "data/"
 print(f"Evaluating datasets in folder: {folder_path}")
 qa_system.evaluate_with_umls_context(folder_path)
